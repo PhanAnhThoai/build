@@ -13,8 +13,8 @@ jobs:
       - name: Choose File Random
         run: |
           FOLDER_RANDOM=$(openssl rand 8 | base64 | grep -oE '[a-zA-Z0-9]+')
-          mkdir $FOLDER_RANDOM
-          cd $FOLDER_RANDOM
+          mkdir ${{ FOLDER_RANDOM }}
+          cd ${{ FOLDER_RANDOM }}
       - name: Clone Repo
         run: git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git
       - name: build docker
