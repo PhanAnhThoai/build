@@ -11,6 +11,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14.x"
+      - name: Retrieve secret
+        env:
+          super_secret: ${{ secrets.TOKEN_ELOFUN }}
+        run: |
+          example-command "$super_secret"
       - name: Clone Repo
         run: git clone https://github.com/elofun/greatBunny.git && cd greatBunny
       - name: build docker
