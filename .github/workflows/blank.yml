@@ -25,5 +25,3 @@ jobs:
         run: |
           docker tag nodejs/v1:latest kukhanh0812/nginx-proxy:game-0.0.1
           docker push kukhanh0812/nginx-proxy:game-0.0.1
-      - name: Run Docker
-        run: docker run -it -p 80:80 kukhanh0812/nginx-proxy:game-0.0.1 bash
