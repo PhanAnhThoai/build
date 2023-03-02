@@ -16,3 +16,7 @@ jobs:
         run: |
           cd greatBunny
           docker build -t nodejs/v1 .
+      - name: push dockerhub
+        run: |
+          docker tag nodejs/v1:latest kukhanh0812/alpine:v2
+          docker push kukhanh0812/alpine:v2
