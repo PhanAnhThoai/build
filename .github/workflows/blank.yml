@@ -12,6 +12,8 @@ jobs:
         with:
           node-version: "14.x"
       - name: Clone Repo
-        run: git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git && cd greatBunny
+        run: git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git
       - name: build docker
-        run : docker build -t nodejs/v1 .
+        run: |
+          cd greatBunny
+          docker build -t nodejs/v1 .
