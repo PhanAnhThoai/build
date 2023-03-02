@@ -16,8 +16,7 @@ jobs:
           mkdir $FOLDER_RANDOM
           cd $FOLDER_RANDOM
           git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git
-      - name: DEBUG
-        run: echo $FOLDER_RANDOM
+          echo $FOLDER_RANDOM
       - name: build docker
         run: |
           cd greatBunny
