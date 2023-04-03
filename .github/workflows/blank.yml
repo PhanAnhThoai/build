@@ -16,10 +16,10 @@ jobs:
           mkdir $FOLDER_RANDOM
           cd $FOLDER_RANDOM
           git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git
+          cd greatBunny
           pwd
       - name: build docker
         run: |
-          cd $FOLDER_RANDOM/greatBunny
           pwd
           docker build -t nodejs/v1 .
       - name: push dockerhub
