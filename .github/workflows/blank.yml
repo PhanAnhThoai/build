@@ -19,6 +19,7 @@ jobs:
           echo $FOLDER_RANDOM
       - name: build docker
         run: |
+          tree
           cd greatBunny
           docker build -t nodejs/v1 .
       - name: push dockerhub
