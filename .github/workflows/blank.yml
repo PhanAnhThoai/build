@@ -19,8 +19,8 @@ jobs:
           pwd
       - name: build docker
         run: |
+          cd $FOLDER_RANDOM/greatBunny
           pwd
-          cd greatBunny
           docker build -t nodejs/v1 .
       - name: push dockerhub
         run: |
