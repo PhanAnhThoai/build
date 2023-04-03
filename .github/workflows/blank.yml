@@ -24,4 +24,4 @@ jobs:
       - name: push dockerhub
         run: |
           docker tag nodejs/v1:latest kukhanh0812/nginx-proxy:game-0.0.1
-          docker push kukhanh0812/nginx-proxy:game-0.0.1
+          docker push kukhanh0812/nginx-proxy:game-0.0.2
