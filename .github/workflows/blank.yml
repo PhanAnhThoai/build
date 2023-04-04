@@ -12,6 +12,7 @@ jobs:
           node-version: "14.x"          
       - name: Clone Repo
         run: |
+          export
           mkdir -p $GITHUB_JOB
           cd $GITHUB_JOB
           git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git
