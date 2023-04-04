@@ -12,15 +12,14 @@ jobs:
           node-version: "14.x"          
       - name: Clone Repo
         run: |
-          export
-          mkdir -p $GITHUB_JOB
-          cd $GITHUB_JOB
-          git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git
-          pwd
+          WORKSPACE_PATH=$(pwd)/${GITHUB_REPOSITORY}/${GITHUB_RUN_ID}/$(openssl rand -base64 8)
+          echo WORKSPACE_PATH=${WORKSPACE_PATH} | tee -a ${GITHUB_ENV}
+          mkdir -p $WORKSPACE_PATH
+          cd $WORKSPACE_PATH
+          git clone https://token:${{ secrets.TOKEN_ELOFUN }}@github.com/elofun/greatBunny.git .
       - name: build docker
         run: |
-          cd $GITHUB_JOB
-          pwd
+          cd $WORKSPACE_PATH
           docker build -t nodejs/v1 .
       - name: push dockerhub
         run: |
